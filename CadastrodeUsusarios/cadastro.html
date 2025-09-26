@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Cadastro de Usuário</h2>
+
+  <form id="cadastroForm">
+    
+    <!-- Nome -->
+    <label for="nome">Nome Completo:</label>
+    <input type="text" id="nome" name="nome" placeholder="Ex: Francisco Kayky" required>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+    <!-- Senha -->
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" minlength="8" required placeholder="Mínimo de 8 caracteres">
+
+    <!-- Confirmar Senha -->
+    <label for="confirmar_senha">Confirmar Senha:</label>
+    <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Repita a senha">
+
+    <!-- Genero -->
+    <label>Gênero:</label>
+    <div class="inline-group">
+      <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+      <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+      <label><input type="radio" name="genero" value="outro"> Outro</label>
+    </div>
+
+    <!-- Interesses -->
+    <label>Interesses:</label>
+    <div class="inline-group">
+      <label><input type="checkbox" name="interesses" value="esportes"> Esportes</label>
+      <label><input type="checkbox" name="interesses" value="musica"> Música</label>
+      <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label>
+    </div>
+
+    <!-- Foto -->
+    <label for="foto">Foto de Perfil:</label>
+    <input type="file" id="foto" name="foto" accept="image/*">
+
+    <!-- País -->
+    <label for="pais">País de Origem:</label>
+    <select id="pais" name="pais" required>
+      <option value="">Selecione um país</option>
+      <option value="brasil">Brasil</option>
+      <option value="portugal">Portugal</option>
+      <option value="estados-unidos">Estados Unidos</option>
+      <option value="canada">Canadá</option>
+      <option value="japao">Japão</option>
+    </select>
+
+    <!-- Cadastrar -->
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Carregar Dados salvos no localStorage ao carregar a página
+      if (localStorage.getItem('formData')) {
+        const savedData = JSON.parse(localStorage.getItem('formData'));
+        document.getElementById('nome').value = savedData.nome;
+        document.getElementById('email').value = savedData.email;
+        document.getElementById('senha').value = savedData.senha;
+        document.getElementById('confirmar_senha').value = savedData.confirmar_senha;
+        document.querySelector(`input[name="genero"][value="${savedData.genero}"]`).checked = true;
+
+        savedData.interesses.forEach(function (interesse) {
+          document.querySelector(`input[name="interesses"][value="${interesse}"]`).checked = true;
+        });
+        document.getElementById('pais').value = savedData.pais;
+      }
+    });
+
+    document.getElementById('cadastroForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      
+      const senha = document.getElementById('senha').value;
+      const confirmarSenha = document.getElementById('confirmar_senha').value;
+
+      if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
+      // Coletando os dados
+      const formData = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        senha: senha,
+        confirmar_senha: confirmarSenha,
+        genero: document.querySelector('input[name="genero"]:checked').value,
+        interesses: Array.from(document.querySelectorAll('input[name="interesses"]:checked')).map(input => input.value),
+        pais: document.getElementById('pais').value
+      };
+
+      // Salvando dados no localStorage
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      alert('Dados salvos com sucesso!');
+    });
+  </script>
+
+</body>
+</html>
