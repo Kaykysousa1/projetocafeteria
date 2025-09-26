@@ -1,0 +1,128 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 60px; 
+      padding-bottom: 40px; 
+      background-color: rgba(150, 118, 77);
+    }
+
+ header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  color: #ffffff;
+  font-size: large;
+  text-align: center;
+  line-height: 60px;
+  z-index: 1000;
+  border: 1px solid black;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.1)),
+    url('https://as1.ftcdn.net/v2/jpg/06/06/12/54/1000_F_606125490_4rr4jSpFaFh7gPfAtYfprGz5911t5ljG.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-weight: bold;
+}
+
+    nav {
+      float: left;
+      top: 50%;
+      width: 20%;
+      background-color: rgb(121, 85, 38);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid black;
+      margin-top: 5px;
+      text-align: center;
+    }   
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: rgb(150, 118, 77);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: rgb(92, 57, 36);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+    main {
+      margin-left: 20%;
+      padding: 20px;
+    }
+
+    .imagem {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .imagem img {
+      width: 255px;
+      height: 225px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: border 0.3s;
+    }
+
+    .imagem img:hover {
+      border: 3px solid #ff6600;
+    }
+
+    .scroll-box {
+      max-height: 100px;
+      overflow: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #fafafa;
+      border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: rgb(121, 85, 38);
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      border-top: 1px solid black;
+    }
+
+    .sticky-img {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 70px;
+      width: 100%;
+      max-width: 200px;
+      margin-top: 20px;
+    }
