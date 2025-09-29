@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="minilayout.css">
+</head>
+
+<title>Mini-layout</title>
+
+<header>
+    <u>CAFETERIA</u>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Galeria de Imagens</h2>
+    <div class="imagem">
+      <img src="https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg" data-imgs='["https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg", "https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg"]' onclick="cycleImages(this)">
+      <img src="https://images.pexels.com/photos/19499001/pexels-photo-19499001.jpeg"data-imgs='["https://images.pexels.com/photos/27304295/pexels-photo-27304295.jpeg", "https://images.pexels.com/photos/19499001/pexels-photo-19499001.jpeg"]' onclick="cycleImages(this)">
+      <img src="https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg"data-imgs='["https://images.pexels.com/photos/11913637/pexels-photo-11913637.jpeg", "https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg"]' onclick="cycleImages(this)">
+           <img src="https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg" data-imgs='["https://images.pexels.com/photos/18759420/pexels-photo-18759420.jpeg", "https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg"]' onclick="cycleImages(this)">
+    </div>
+
+
+    <div class="scroll-box">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recusandae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nesciunt pariatur eveniet ut neque, eius accusamus magnam facilis, necessitatibus ullam quo. Minus dolor nobis modi molestiae illo neque. Magnam, ratione.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aut eaque molestiae maxime assumenda repellendus officia ullam facilis distinctio nemo nihil hic dolore eveniet, consequatur aliquam fugit obcaecati ipsam iste!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aliquam inventore eius perferendis quia voluptatibus pariatur, voluptate quis nemo porro nostrum officia laboriosam ipsam quaerat? Suscipit vitae minima aliquam ab!</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nemo alias impedit. Cum facilis ipsam quidem eaque, magni, impedit velit odit ea exercitationem quaerat modi cumque omnis harum quas rem.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta cumque fuga voluptatum nihil recusandae, ipsa reprehenderit omnis rerum, magnam laboriosam nulla sed perspiciatis ea perferendis quasi possimus praesentium, fugiat nemo.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio laborum cupiditate vitae. Magni minima doloribus eum in blanditiis dolore ipsum ipsa, soluta corporis aliquam neque culpa eligendi sapiente aut?</p>
+    </div>
+
+    <img src="https://images.pexels.com/photos/1813466/pexels-photo-1813466.jpeg" class="sticky-img">
+
+  </main>
+
+  <script>
+function cycleImages(img) {
+  let imgs = JSON.parse(img.getAttribute('data-imgs'));
+  let currentIndex = imgs.indexOf(img.src);
+  let nextIndex = (currentIndex + 1) % imgs.length;
+  img.src = imgs[nextIndex];
+}
+</script>
+
+  <footer>
+    Rodapé
+  </footer>
+
+</body>
