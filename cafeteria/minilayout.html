@@ -3,52 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mini-layout</title>
     <link rel="stylesheet" href="minilayout.css">
 </head>
-
-<title>Mini-layout</title>
+<body>
 
 <header>
-    Cabeçalho Fixo
-  </header>
+    <u>CAFETERIA</u>
+</header>
 
-  <nav>
+<nav>
     <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Serviços</a></li>
+      <li><a href="minilayout.html">Início</a></li>
+      <li><a href="cardapio.html">Serviços</a></li>
       <li><a href="#">Contato</a></li>
     </ul>
-  </nav>
+</nav>
 
-  <main>
+<main>
     <h2>Galeria de Imagens</h2>
     <div class="imagem">
-      <img src="https://as1.ftcdn.net/v2/jpg/00/94/14/38/1000_F_94143804_QFuKnDxb29Crj61iuBClT9wQPErPfGsw.jpg"
-        onclick="this.src='https://as2.ftcdn.net/v2/jpg/03/08/55/01/1000_F_308550165_Wz8yU2clydT61gVuL50EyTlWuYrPgW33.jpg'">
-      <img src="https://images.pexels.com/photos/2642842/pexels-photo-2642842.jpeg">
-      <img src="https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg">
-      <img src="">
+      <img src="https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg" data-imgs='["https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg", "https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg"]' onclick="cycleImages(this)">
+      <img src="https://images.pexels.com/photos/19499001/pexels-photo-19499001.jpeg" data-imgs='["https://images.pexels.com/photos/27304295/pexels-photo-27304295.jpeg", "https://images.pexels.com/photos/19499001/pexels-photo-19499001.jpeg"]' onclick="cycleImages(this)">
+      <img src="https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg" data-imgs='["https://images.pexels.com/photos/11913637/pexels-photo-11913637.jpeg", "https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg"]' onclick="cycleImages(this)">
+      <img src="https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg" data-imgs='["https://images.pexels.com/photos/18759420/pexels-photo-18759420.jpeg", "https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg"]' onclick="cycleImages(this)">
     </div>
-
 
     <div class="scroll-box">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-      <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio commodi omnis quidem hic sed consectetur deleniti totam ut corporis harum numquam culpa, rem magnam rerum dolorem quisquam impedit quia temporibus.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus explicabo mollitia dolorem. Asperiores et ipsum autem sed dolorem sapiente sunt, rem optio, nemo reiciendis placeat quibusdam! Sit consequatur temporibus est.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quod soluta consectetur inventore dolor porro quasi repellat illum voluptas eum fugiat incidunt laborum minus natus, pariatur obcaecati atque dolore ea.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit laudantium repellat corrupti provident temporibus alias molestias praesentium voluptates ratione magnam laboriosam molestiae, esse earum sequi atque? Itaque rerum adipisci quia.</p>
-      <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recusandae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recusandae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recus
+andae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recus
+andae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recus
+andae doloremque reiciendis nostrum dolor et atque consequatur illum! Deserunt et atque dolorum vel! Consectetur aspernatur ratione laudantium nobis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse officiis recus
     </div>
 
-    <img src="https://via.placeholder.com/200x150?text=Sticky" class="sticky-img">
+<script>
+function cycleImages(img) {
+  let imgs = JSON.parse(img.getAttribute('data-imgs'));
+  let currentIndex = imgs.indexOf(img.src);
+  let nextIndex = (currentIndex + 1) % imgs.length;
+  img.src = imgs[nextIndex];
+}
 
-  </main>
+</script>
 
-
-  <footer>
-    Rodapé Fixo
-  </footer>
+<footer>
+  Rodapé
+</footer>
 
 </body>
+</html>
